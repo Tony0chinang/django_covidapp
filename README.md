@@ -5,7 +5,7 @@
 - This project will extract a csv file which contains covid cases data and displays thru and endpoint.
 
 
-## Installation
+## Installation (Windows)
 
 ###### Technology Requirements:
 - **Python 3** – To install python 3, follow the instructions found here at the Python Software Foundations downloads page. The current Python version is v3.6.0.
