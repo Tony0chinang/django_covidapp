@@ -23,32 +23,32 @@ def extract_file(url):
     with open(url, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
         for line in csv_reader:
-            if count < 51:
-                print(line)
-                if line[0] != 'SNo':
-                    observation = line[1]                                     
-                    lastupdate = line[4]
-                    confirmed = line[5]            
-                    confirm = confirmed.split(".",1)[0]
-                    deaths = line[6]            
-                    death = deaths.split(".",1)[0]
-                    recovered = line[7]            
-                    recover = recovered.split(".",1)[0]
-                    
-                    #create record
-                    case = Case()
-                    case.sno =  line[0]
-                    case.observationdate =  parse(observation)
-                    case.state =  line[2]
-                    case.country =  line[3]
-                    case.last_updated =  parse(lastupdate)
-                    case.confirmed =  (confirm)
-                    case.deaths =  (death)
-                    case.recovered =  (recover)
-                    case.save()
-                    print('new record saved...')
-                    
-                    count = count+1
+            #if count < 51:
+            print(line)
+            if line[0] != 'SNo':
+                observation = line[1]                                     
+                lastupdate = line[4]
+                confirmed = line[5]            
+                confirm = confirmed.split(".",1)[0]
+                deaths = line[6]            
+                death = deaths.split(".",1)[0]
+                recovered = line[7]            
+                recover = recovered.split(".",1)[0]
+                
+                #create record
+                case = Case()
+                case.sno =  line[0]
+                case.observationdate =  parse(observation)
+                case.state =  line[2]
+                case.country =  line[3]
+                case.last_updated =  parse(lastupdate)
+                case.confirmed =  (confirm)
+                case.deaths =  (death)
+                case.recovered =  (recover)
+                case.save()
+                print('new record saved...')
+                
+                #count = count+1
 
 def home(request):    
     firstopen = request.session.get('newopen')
