@@ -74,5 +74,5 @@ Use this url to access the administration dashboard.
 1.	Covid datas: holds the csv file that will be extracted by the web app.
 2.	Covid_observationss: holds all covid cases record extracted from the csv file,
 
-    **Note:** The table label was pluralized by django by default which is why there is a double is from the label, the database table is named ‘Covid_observations’..
+    **Note:** The table label was pluralized by django by default which is why there is a double s from the label, the database table is named ‘Covid_observations’..
 
