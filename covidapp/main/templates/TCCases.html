@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	<table class="table table-hover table-striped">
+		  <thead class="thead-dark">
+			<tr>
+			  <th scope="col">SNo</th>
+			  <th scope="col">Observation Date</th>
+			  <th scope="col">Province/State</th>
+			  <th scope="col">Country/Region</th>
+			  <th scope="col">Last Update</th>
+			  <th scope="col">Confirmed</th>
+			  <th scope="col">Deaths</th>
+			  <th scope="col">Recovered</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			  {% for case in cases %}
+			  <tr>
+				  <td>{{case.sno}}</td>
+				  <td>{{case.observationdate}}</td>
+				  <td>{{case.state}}</td>
+				  <td>{{case.region}}</td>
+				  <td>{{case.last_updated}}</td>
+				  <td>{{case.cofirmed}}</td>
+				  <td>{{case.deaths}}</td>
+				  <td>{{case.recovered}}</td>
+			  </tr>
+			  {% endfor %}			
+		  </tbody>
+		</table>
+{% endblock content %}

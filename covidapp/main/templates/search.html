@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	<div class="wrapper fadeInDown">
+	  <div id="formContent">
+		<!-- Tabs Titles -->
+
+		<!-- Login Form -->
+		<form>
+		<div class="container mt-5">
+			<p class="mb-3 mt-3">Observation Date:<input type="text" id="odate" class="fadeIn third" name="maxresult" value="2020-01-22"></p>
+			</p>
+			<p class="mb-3 mt-3">Maximum Results<input type="text" id="mresult" class="fadeIn third" name="maxresult" value="1"></p>
+			<a class="btn btn-primary mt-3 mb-5" onclick="GetTop(document.getElementById('odate').value,document.getElementById('mresult').value)">Get Top Confirmed Cases</a>
+		</div>
+		</div>
+		</form>
+		
+	  </div>
+	</div>
+	<script type="text/javascript">
+		function GetTop(odate, mresult) {
+			sver = '{% url "top-confirmed" %}';
+			nexturl = sver + '?observation_date=' + odate + '&max_results=' + mresult;
+			
+			location.href = nexturl;
+		}
+	</script>
+{% endblock content %}
